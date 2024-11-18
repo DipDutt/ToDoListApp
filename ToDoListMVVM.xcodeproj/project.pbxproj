@@ -15,6 +15,7 @@
 		1C24F44F2BC0226100401A64 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F44C2BC0226100401A64 /* ListRowView.swift */; };
 		1C24F4502BC0226100401A64 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F44D2BC0226100401A64 /* ListView.swift */; };
 		1C24F4522BC0227200401A64 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C24F4512BC0227200401A64 /* ItemsViewModel.swift */; };
+		1C7A96BC2CEB9E78000D8877 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A96BB2CEB9E78000D8877 /* TopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		1C24F44C2BC0226100401A64 /* ListRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		1C24F44D2BC0226100401A64 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		1C24F4512BC0227200401A64 /* ItemsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
+		1C7A96BB2CEB9E78000D8877 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				1C24F44B2BC0226100401A64 /* AdditemView.swift */,
 				1C24F44C2BC0226100401A64 /* ListRowView.swift */,
 				1C24F44D2BC0226100401A64 /* ListView.swift */,
+				1C7A96BB2CEB9E78000D8877 /* TopView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C7A96BC2CEB9E78000D8877 /* TopView.swift in Sources */,
 				1C24F44E2BC0226100401A64 /* AdditemView.swift in Sources */,
 				1C24F44A2BC0224700401A64 /* ItemModel.swift in Sources */,
 				1C24F4502BC0226100401A64 /* ListView.swift in Sources */,
