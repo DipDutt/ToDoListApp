@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ListView: View {
+    // MARK: Properties
+    
     @EnvironmentObject var vm: ItemsViewModel
     
     // MARK: - body
@@ -20,7 +22,6 @@ struct ListView: View {
                 .onDelete(perform:vm.deleteItems)
                 .onMove(perform: vm.moveItems)
             }
-            
             .listStyle(.plain)
             .navigationTitle(" ToDo ListItem 📝")
             .toolbar {
@@ -36,11 +37,9 @@ struct ListView: View {
                             Image(systemName: "plus.circle")
                         }
                     }
-                    
                 }
             }
         }
-        
     }
 }
 // MARK: - Preview

@@ -16,16 +16,14 @@ class ItemsViewModel:ObservableObject {
     
     // MARK: - Create Fuction to getItems
     func getItems() {
-       
+        
     }
     
     // MARK: - Create Fuction to additems form the additemView
     func addItems(item: String) {
-       let newItem = ItemModel(title: item, isCompleted: false)
+        let newItem = ItemModel(title: item, isCompleted: false)
         items.append(newItem)
     }
-    
-    
     
     // MARK: - Create Fuction to moveItems
     func moveItems(from source: IndexSet, to destination: Int) {

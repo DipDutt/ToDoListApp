@@ -15,7 +15,6 @@ struct AdditemView: View {
     @State var showAlert:Bool = false
     @Environment(\.dismiss) var dismiss
     
-    
     // MARK: - body
     var body: some View {
         NavigationStack {
@@ -54,7 +53,6 @@ struct AdditemView: View {
                     }
                 }
         }
-        
     }
     
     // MARK: - add items from the textField.
@@ -70,7 +68,6 @@ struct AdditemView: View {
 }
 // MARK: - Preview
 #Preview {
-    
     AdditemView()
         .environmentObject(ItemsViewModel())
     
