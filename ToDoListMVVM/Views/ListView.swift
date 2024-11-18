@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct ListView: View {
-    @State var items:[ItemModel] = [
-        ItemModel(title: "FirstItem1", isCompleted: true),
-        ItemModel(title: "FirstItem2", isCompleted: false),
-        ItemModel(title: "FirstItem3", isCompleted: true)
-    ]
+    @EnvironmentObject var vm: ItemsViewModel
     // MARK: - body
     var body: some View {
         List {
-            ForEach(items) { item in
+            ForEach(vm.items) { item in
                 ListRowView(item: item)
             }
+            .onDelete(perform:vm.deleteItems)
+            .onMove(perform: vm.moveItems)
         }
+        
         .listStyle(.plain)
         .navigationTitle(" ToDo ListItem 📝")
         .toolbar {
@@ -38,6 +37,7 @@ struct ListView: View {
                 
             }
         }
+        
     }
 }
 // MARK: - Preview
