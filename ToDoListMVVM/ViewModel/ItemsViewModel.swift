@@ -8,5 +8,42 @@
 import Foundation
 
 class ItemsViewModel:ObservableObject {
+    @Published var items:[ItemModel] = []
+    
+    init() {
+        getItems()
+    }
+    
+    // MARK: - Create Fuction to getItems
+    func getItems() {
+       
+    }
+    
+    // MARK: - Create Fuction to additems form the additemView
+    func addItems(item: String) {
+       let newItem = ItemModel(title: item, isCompleted: false)
+        items.append(newItem)
+    }
+    
+    
+    
+    // MARK: - Create Fuction to moveItems
+    func moveItems(from source: IndexSet, to destination: Int) {
+        items.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    // MARK: - Create Fuction to deleteItems
+    func deleteItems(at offsets: IndexSet) {
+        items.remove(atOffsets: offsets)
+    }
+    // MARK: - Create Fuction toupdateItmes
+    func updateItmes() {
+        
+    }
+    
+    // MARK: - Create Fuction saveItemsInUserDefault
+    func saveItemsInUserDefault() {
+        
+    }
     
 }
