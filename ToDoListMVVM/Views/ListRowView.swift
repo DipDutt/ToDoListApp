@@ -23,6 +23,7 @@ struct ListRowView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 5)
         
+        
     }
 }
 // MARK: - Preview
