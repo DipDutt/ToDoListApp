@@ -15,30 +15,37 @@ struct ListView: View {
     // MARK: - body
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(vm.items) { item in
-                    ListRowView(item: item)
+            ZStack {
+                if vm.items.count == 0 {
+                    TopView()
                 }
-                .onDelete(perform:vm.deleteItems)
-                .onMove(perform: vm.moveItems)
-            }
-            .listStyle(.plain)
-            .navigationTitle(" ToDo ListItem 📝")
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
+                
+                List {
+                    ForEach(vm.items) { item in
+                        ListRowView(item: item)
+                    }
+                    .onDelete(perform:vm.deleteItems)
+                    .onMove(perform: vm.moveItems)
                 }
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink {
-                        AdditemView()
-                    } label: {
-                        HStack {
-                            Text("Add Item")
-                            Image(systemName: "plus.circle")
+                .listStyle(.insetGrouped)
+                .navigationTitle(" ToDo ListItem 📝")
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        EditButton()
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink {
+                            AdditemView()
+                        } label: {
+                            HStack {
+                                Text("Add Item")
+                                Image(systemName: "plus.circle")
+                            }
                         }
                     }
                 }
             }
+            
         }
     }
 }
