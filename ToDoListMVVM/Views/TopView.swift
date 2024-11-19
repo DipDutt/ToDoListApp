@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopView: View {
+    @State var isAnimated: Bool = false
     var body: some View {
         NavigationStack {
             VStack(spacing: 5) {
@@ -28,18 +29,36 @@ struct TopView: View {
                     Text("Tap Here")
                         .foregroundStyle(Color.white)
                         .frame(height: 50)
-                        .frame(width: 100)
-                        .background(Color.blue)
-                        .clipShape(.rect(cornerRadius: 15))
+                        .frame(maxWidth: .infinity)
+                        .background(isAnimated ? Color.red:Color.blue)
+                        .clipShape(.rect(cornerRadius: 10))
                 }
+                .padding(.horizontal, 40)
+                .offset(y:isAnimated ? 10.0 : 0)
+                .shadow(color: .black.opacity(0.6), radius: 5, x: 0.0, y: isAnimated ? 10 : 0)
                 
             }
             .padding(.top, 30)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .onAppear(perform: {
+                startAnimation()
+            })
         }
     }
 }
 
 #Preview {
     TopView()
+}
+
+// MARK: - TopView Extension
+extension TopView {
+    func startAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            withAnimation(.easeInOut(duration: 2.0) .repeatForever()) {
+                isAnimated.toggle()
+            }
+        }
+        
+    }
 }
