@@ -27,7 +27,7 @@ struct ListView: View {
                     .onDelete(perform:vm.deleteItems)
                     .onMove(perform: vm.moveItems)
                 }
-                .listStyle(.insetGrouped)
+                .listStyle(.plain)
                 .navigationTitle(" ToDo ListItem 📝")
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
