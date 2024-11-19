@@ -13,7 +13,7 @@ struct TopView: View {
         NavigationStack {
             VStack(spacing: 5) {
                 Text("There Is No Items Here")
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 Text("To add 🧾 on the list you can add press button ⏹️ or add item button ▶️ top right corner.")
                     .lineLimit(2)
