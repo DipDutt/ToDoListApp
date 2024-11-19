@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TopView: View {
     @State var isAnimated: Bool = false
+    @Environment(\.colorScheme) var colorScheme
+    
+    // MARK: - main body
     var body: some View {
         NavigationStack {
             VStack(spacing: 5) {
