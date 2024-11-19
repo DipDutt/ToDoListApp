@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TopView: View {
+    // MARK: - Properties
+    
     @State var isAnimated: Bool = false
     @Environment(\.colorScheme) var colorScheme
     
@@ -17,13 +19,14 @@ struct TopView: View {
             VStack(spacing: 5) {
                 Text("There Is No Items Here")
                     .font(.title)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .fontWeight(.bold)
+                    .foregroundStyle(colorScheme == .light ? Color.blue: Color.orange)
                 Text("To add 🧾 on the list you can add press button ⏹️ or add item button ▶️ top right corner.")
                     .lineLimit(2)
                     .padding()
                     .font(.title3)
                     .fontWeight(.heavy)
-                    .foregroundStyle(Color.green)
+                    .foregroundStyle(colorScheme == .light ? Color.green.gradient : Color.teal.gradient)
                     .multilineTextAlignment(.center)
                   
                 NavigationLink {
@@ -33,7 +36,7 @@ struct TopView: View {
                         .foregroundStyle(Color.white)
                         .frame(height: 50)
                         .frame(maxWidth: .infinity)
-                        .background(isAnimated ? Color.red:Color.blue)
+                        .background(isAnimated ? Color.green : Color.red)
                         .clipShape(.rect(cornerRadius: 10))
                 }
                 .padding(.horizontal, 40)
