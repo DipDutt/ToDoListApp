@@ -24,7 +24,7 @@ struct ListRowView: View {
         }
         .font(.title2)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, 5)
+        
     }
 }
 // MARK: - Preview
