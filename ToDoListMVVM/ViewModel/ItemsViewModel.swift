@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ItemsViewModel:ObservableObject {
     // MARK: - Properties
@@ -48,11 +49,19 @@ class ItemsViewModel:ObservableObject {
     func deleteItems(at offsets: IndexSet) {
         items.remove(atOffsets: offsets)
     }
- 
+    
     // MARK: - Create Fuction saveItemsInUserDefaults
     func saveItemsInUserDefault() {
         if let jsonEncoder = try? JSONEncoder().encode(items) {
             UserDefaults.standard.setValue(jsonEncoder, forKeyPath: itemKey)
         }
     }
+    
+    func updateItem(item:ItemModel) {
+        if let index = items.firstIndex(where: {$0.id == item.id}) {
+            items[index] = item.updateCompletion()
+        }
+        
+    }
+    
 }

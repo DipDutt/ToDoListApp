@@ -23,9 +23,6 @@ struct ListView: View {
                 List {
                     ForEach(vm.items) { item in
                         ListRowView(item: item)
-//                            .onTapGesture {
-//                                vm.updateItem(item: item)
-//                            }
                     }
                     .onDelete(perform:vm.deleteItems)
                     .onMove(perform: vm.moveItems)

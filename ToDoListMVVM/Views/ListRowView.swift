@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListRowView: View {
     // MARK: - Properties
-  @State var item:ItemModel
+    @State var item:ItemModel
     
     // MARK: - body
     var body: some View {
@@ -25,14 +25,10 @@ struct ListRowView: View {
         .font(.title2)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 5)
-        .onTapGesture {
-            item.isCompleted.toggle()
-        }
-        
-        
     }
 }
 // MARK: - Preview
 #Preview {
-    ListRowView(item: ItemModel(title: "firstitem", isCompleted: true))
+    ListRowView(item: ItemModel(title: "FIRST iTEM", isCompleted: true))
+    
 }

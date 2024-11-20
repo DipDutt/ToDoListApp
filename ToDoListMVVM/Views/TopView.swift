@@ -32,7 +32,7 @@ struct TopView: View {
                 NavigationLink {
                     AdditemView()
                 } label: {
-                   Label("Tap Here", systemImage: "hand.tap")
+                    Label("Tap Here", systemImage: "hand.tap")
                         .foregroundStyle(Color.white)
                         .frame(height: 50)
                         .frame(maxWidth: .infinity)
