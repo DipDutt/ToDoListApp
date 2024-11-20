@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListRowView: View {
     // MARK: - Properties
-    let item:ItemModel
+  @State var item:ItemModel
     
     // MARK: - body
     var body: some View {
@@ -25,6 +25,9 @@ struct ListRowView: View {
         .font(.title2)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 5)
+        .onTapGesture {
+            item.isCompleted.toggle()
+        }
         
         
     }
