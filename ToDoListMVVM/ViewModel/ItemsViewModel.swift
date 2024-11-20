@@ -8,7 +8,13 @@
 import Foundation
 
 class ItemsViewModel:ObservableObject {
-    @Published var items:[ItemModel] = []
+    // MARK: - Properties
+    @Published var items:[ItemModel] = [] {
+        didSet {
+            saveItemsInUserDefault()
+        }
+    }
+    let itemKey:String = "item_key"
     
     init() {
         getItems()
@@ -41,7 +47,9 @@ class ItemsViewModel:ObservableObject {
     
     // MARK: - Create Fuction saveItemsInUserDefault
     func saveItemsInUserDefault() {
-        
+        if let jsonEncoder = try? JSONEncoder().encode(items) {
+            UserDefaults.setValue(jsonEncoder, forKey: itemKey)
+        }
     }
     
 }
