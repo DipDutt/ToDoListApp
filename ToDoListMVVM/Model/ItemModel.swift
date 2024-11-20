@@ -10,7 +10,7 @@ import Foundation
 struct ItemModel:Identifiable,Codable {
     var id:String = UUID().uuidString
     let title:String
-    var isCompleted:Bool
+    let isCompleted:Bool
     
     init(id: String = UUID().uuidString, title: String, isCompleted: Bool) {
             self.id = id

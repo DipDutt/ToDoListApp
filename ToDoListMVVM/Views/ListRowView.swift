@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListRowView: View {
     // MARK: - Properties
-    @State var item:ItemModel
+    let item:ItemModel
     
     // MARK: - body
     var body: some View {
