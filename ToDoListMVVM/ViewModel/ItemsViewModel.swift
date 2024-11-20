@@ -48,13 +48,7 @@ class ItemsViewModel:ObservableObject {
     func deleteItems(at offsets: IndexSet) {
         items.remove(atOffsets: offsets)
     }
-    // MARK: - Create Fuction toupdateItmes
-    func updateItem(item: ItemModel) {
-        if let index = items.firstIndex(where: { $0.id == item.id }) {
-            items[index] = item.updateCompletion()
-        }
-    }
-    
+ 
     // MARK: - Create Fuction saveItemsInUserDefaults
     func saveItemsInUserDefault() {
         if let jsonEncoder = try? JSONEncoder().encode(items) {
