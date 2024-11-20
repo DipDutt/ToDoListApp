@@ -28,11 +28,11 @@ struct TopView: View {
                     .fontWeight(.heavy)
                     .foregroundStyle(colorScheme == .light ? Color.green.gradient : Color.teal.gradient)
                     .multilineTextAlignment(.center)
-                  
+                
                 NavigationLink {
                     AdditemView()
                 } label: {
-                    Text("Tap Here")
+                   Label("Tap Here", systemImage: "hand.tap")
                         .foregroundStyle(Color.white)
                         .frame(height: 50)
                         .frame(maxWidth: .infinity)

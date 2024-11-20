@@ -39,7 +39,6 @@ struct AdditemView: View {
                             .background(Color.blue)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
-                    
                 }
                 .padding()
                 .navigationTitle("Add an item 🖌️")

@@ -20,7 +20,6 @@ struct ListRowView: View {
                 .font(.title)
                 .fontWeight(.semibold)
                 .foregroundStyle(Color("ColorTheme"))
-            
         }
         .font(.title2)
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -16,11 +16,12 @@ class ItemsViewModel:ObservableObject {
     }
     let itemKey:String = "item_key"
     
+    // MARK: - Initilization()
     init() {
         getItems()
     }
     
-    // MARK: - Create Fuction to getItems
+    // MARK: - Create Fuction to getItems to decode items and get data from user defaults.
     func getItems() {
         
         guard let data = UserDefaults.standard.data(forKey: itemKey),
@@ -48,15 +49,14 @@ class ItemsViewModel:ObservableObject {
         items.remove(atOffsets: offsets)
     }
     // MARK: - Create Fuction toupdateItmes
-    func updateItmes() {
+    func updateItems() {
         
     }
     
-    // MARK: - Create Fuction saveItemsInUserDefault
+    // MARK: - Create Fuction saveItemsInUserDefaults
     func saveItemsInUserDefault() {
         if let jsonEncoder = try? JSONEncoder().encode(items) {
             UserDefaults.standard.setValue(jsonEncoder, forKeyPath: itemKey)
         }
     }
-    
 }
