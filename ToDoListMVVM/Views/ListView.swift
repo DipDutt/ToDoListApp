@@ -30,11 +30,12 @@ struct ListView: View {
                     .onDelete(perform:vm.deleteItems)
                     .onMove(perform: vm.moveItems)
                 }
-                .listStyle(.plain)
+                .listStyle(.automatic)
                 .navigationTitle(" ToDo ListItem 📝")
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         EditButton()
+                            .foregroundStyle(Color("ColorTheme2"))
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         NavigationLink {
@@ -42,7 +43,9 @@ struct ListView: View {
                         } label: {
                             HStack {
                                 Text("Add Item")
+                                    .foregroundStyle(Color("ColorTheme2"))
                                 Image(systemName: "plus.circle")
+                                    .foregroundStyle(Color("ColorTheme2"))
                             }
                         }
                     }
