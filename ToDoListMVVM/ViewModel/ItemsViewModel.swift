@@ -23,6 +23,13 @@ class ItemsViewModel:ObservableObject {
     // MARK: - Create Fuction to getItems
     func getItems() {
         
+        guard let data = UserDefaults.standard.data(forKey: itemKey),
+              let saveData = try? JSONDecoder().decode([ItemModel].self, from: data)
+        else {
+            return
+        }
+        self.items.append(contentsOf:saveData)
+        
     }
     
     // MARK: - Create Fuction to additems form the additemView
@@ -48,7 +55,7 @@ class ItemsViewModel:ObservableObject {
     // MARK: - Create Fuction saveItemsInUserDefault
     func saveItemsInUserDefault() {
         if let jsonEncoder = try? JSONEncoder().encode(items) {
-            UserDefaults.setValue(jsonEncoder, forKey: itemKey)
+            UserDefaults.standard.setValue(jsonEncoder, forKeyPath: itemKey)
         }
     }
     
