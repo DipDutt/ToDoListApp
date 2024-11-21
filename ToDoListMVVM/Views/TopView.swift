@@ -42,11 +42,12 @@ struct TopView: View {
                 }
                 .padding(.horizontal, 40)
                 .offset(y:isAnimated ? 10.0 : 0)
-                .shadow(color: .black.opacity(0.6), radius: 5, x: 0.0, y: isAnimated ? 10 : 0)
+                .shadow(color: Color("RadiusColor"), radius: 5, x: 5.0, y: isAnimated ? 10 : 0)
                 
             }
             .padding(.top, 30)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .frame(width: 450)
+            .frame( maxHeight: .infinity, alignment: .top)
             .onAppear(perform: {
                 startAnimation()
             })
