@@ -16,47 +16,50 @@ struct ListView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                if vm.items.count == 0 {
+                if vm.items.isEmpty {
                     TopView()
                 }
-                
-                List {
-                    ForEach(vm.items) { item in
-                        ListRowView(item: item)
-                            .onTapGesture {
-                                withAnimation(.linear) {
-                                    vm.updateItem(item: item)
+                else {
+                    List {
+                        ForEach(vm.items) { item in
+                            ListRowView(item: item)
+                                .onTapGesture {
+                                    withAnimation(.linear) {
+                                        vm.updateItem(item: item)
+                                    }
                                 }
-                            }
+                        }
+                        .onDelete(perform:vm.deleteItems)
+                        .onMove(perform: vm.moveItems)
                     }
-                    .onDelete(perform:vm.deleteItems)
-                    .onMove(perform: vm.moveItems)
-                }
-                .listStyle(.automatic)
-                .navigationTitle(" ToDo ListItem 📝")
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        EditButton()
-                            .foregroundStyle(Color("ColorTheme2"))
-                    }
-                    ToolbarItem(placement: .topBarTrailing) {
-                        NavigationLink {
-                            AdditemView()
-                        } label: {
-                            HStack {
-                                Text("Add Item")
-                                    .foregroundStyle(Color("ColorTheme2"))
-                                Image(systemName: "plus.circle")
-                                    .foregroundStyle(Color("ColorTheme2"))
+                    .listStyle(.automatic)
+                    .navigationTitle(" ToDo ListItem 📝")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            EditButton()
+                                .foregroundStyle(Color("ColorTheme2"))
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            NavigationLink {
+                                AdditemView()
+                            } label: {
+                                HStack {
+                                    Text("Add Item")
+                                        .foregroundStyle(Color("ColorTheme2"))
+                                    Image(systemName: "plus.circle")
+                                        .foregroundStyle(Color("ColorTheme2"))
+                                }
                             }
                         }
                     }
                 }
+                
             }
-            
-        }
+                }
+                
     }
 }
+
 // MARK: - Preview
 #Preview {
     ListView()
