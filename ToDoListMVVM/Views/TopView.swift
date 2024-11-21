@@ -62,6 +62,7 @@ struct TopView: View {
 // MARK: - TopView Extension
 extension TopView {
     func startAnimation() {
+        guard !isAnimated else {return}
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             withAnimation(.easeInOut(duration: 2.0) .repeatForever()) {
                 isAnimated.toggle()
