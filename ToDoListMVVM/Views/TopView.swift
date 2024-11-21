@@ -21,13 +21,14 @@ struct TopView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundStyle(colorScheme == .light ? Color.blue: Color.orange)
-                Text("To add 🧾 on the list you can add press button ⏹️ or add item button ▶️ top right corner.")
+                Text("To add 🧾 on the list you can add Tap Here button ⏹️")
                     .lineLimit(2)
                     .padding()
-                    .font(.title3)
-                    .fontWeight(.heavy)
+                    .font(.system(size: 20))
+                    .fontWeight(.bold)
                     .foregroundStyle(colorScheme == .light ? Color.green.gradient : Color.teal.gradient)
                     .multilineTextAlignment(.center)
+                  
                 
                 NavigationLink {
                     AdditemView()
