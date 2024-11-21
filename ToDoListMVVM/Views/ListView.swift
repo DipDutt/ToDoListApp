@@ -53,10 +53,8 @@ struct ListView: View {
                         }
                     }
                 }
-                
             }
-                }
-                
+        }
     }
 }
 
