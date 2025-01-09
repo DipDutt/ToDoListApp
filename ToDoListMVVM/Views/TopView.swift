@@ -16,7 +16,7 @@ struct TopView: View {
     // MARK: - main body
     var body: some View {
         NavigationStack {
-            VStack(spacing: 5) {
+            VStack() {
                 Text("There Is No Items Here")
                     .font(.title)
                     .fontWeight(.bold)
