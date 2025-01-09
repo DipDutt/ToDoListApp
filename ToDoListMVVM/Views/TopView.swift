@@ -24,7 +24,7 @@ struct TopView: View {
                 Text("To add 🧾 on the list you can add Tap Here button ⏹️")
                     .lineLimit(2)
                     .padding()
-                    .font(.system(size: 20))
+                    .font(.system(size: 15))
                     .fontWeight(.bold)
                     .foregroundStyle(colorScheme == .light ? Color.green.gradient : Color.teal.gradient)
                     .multilineTextAlignment(.center)
