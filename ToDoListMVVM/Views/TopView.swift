@@ -21,7 +21,7 @@ struct TopView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundStyle(colorScheme == .light ? Color.blue: Color.orange)
-                Text("To add 🧾 on the list you can add Tap Here button ⏹️")
+                Text("To add on the list🧾 you can add Tap Here button ⏹️")
                     .lineLimit(2)
                     .padding()
                     .font(.system(size: 15))
