@@ -28,7 +28,6 @@ struct TopView: View {
                     .fontWeight(.bold)
                     .foregroundStyle(colorScheme == .light ? Color.green.gradient : Color.teal.gradient)
                     .multilineTextAlignment(.center)
-                  
                 
                 NavigationLink {
                     AdditemView()
